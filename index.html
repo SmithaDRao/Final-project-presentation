@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9cf35cace6.js" crossorigin="anonymous"></script>
+    <title>Task planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+  
+      <div class="container fluid">
+      
+    <nav class="navbar bg-dark navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="">Task Planner</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link fas fa-home" href="#">  Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fas fa-cog" href="#">  Setting</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link far fa-calendar-check" href="#">  Calendar</a>
+            </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link fas fa-thumbtack dropdown-toggle" data-toggle="dropdown">Task</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" data-target="#myModal">New</a>
+                        <a href="#" class="dropdown-item">Drafts</a>
+                        <a href="#" class="dropdown-item">Important</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#"class="dropdown-item">Done</a>
+                    </div>
+                </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div><br>
+<br>
+<br>
+<section>
+  <div class="col-sm-12">
+  <div class= "row">
+ 
+  <div style="border-block: 3px solid black;"> 
+
+    <div class="card text-white bg-success sm-3" style="max-width: 16rem;">
+      <div class="card-header" style="max-width: 25rem;">In progress</div>
+      <div class="card-body">
+        <h5 class="card-title">Delivery scheduled on-time</h5>
+        <p class="card-text">HTML, CSS projects.</p>
+      </div>
+    </div>
+    <div class="card text-white bg-danger sm-3" style="max-width: 16rem;">
+      <div class="card-header">Impediments</div>
+      <div class="card-body">
+        <h5 class="card-title">High priority</h5>
+        <p class="card-text">May have to reschedule the delivery.</p>
+      </div>
+    </div>
+  <div class="card text-white bg-warning sm-3" style="max-width: 16rem;"> 
+      <div class="card-header">Not Started</div>
+      <div class="card-body">
+        <h5 class="card-title">Projects to be started asap</h5>
+        <p class="card-text">Waiting for Client approval.Start as soon as possible.</p>
+      </div> 
+  </div>      
+</div>  
+>
+<!-- </div> -->
+
+<div class="container fluid">
+  <div class="row">
+    <div class="col p-3">
+      <div class="card h-100">
+          <h4 class="card-header text-white bg-warning">Add task</h4>
+          <div class="card-body">
+              <p class="card-text">
+                  Add a new task to the list.
+              </p>
+              <form id="form-task" class="needs-validation">
+                  <div class="form-row">
+                      <div class="col-8">
+                          <input type="text" id="form-task-text" class="form-control" placeholder="New Task"
+                              required>
+                      </div>
+                      <div class="col">
+                          <button class="btn btn-primary btn-block" type="submit">Add</button>
+                      </div>
+                  </div>
+              </form>
+              <ul id="task-list" class="list-group mt-3">
+                  <li class="task list-group-item d-flex justify-content-between align-items-center" >Learn HTML/CSS <a href="#" class="remove-task badge badge-danger">x</a>
+                  </li>
+                  <li class="task list-group-item d-flex justify-content-between align-items-center">
+                      Learn js
+                      <a href="#" class="remove-task badge badge-danger">x</a>
+                  </li>
+                  <li class="task list-group-item d-flex justify-content-between align-items-center">
+                    Learn OOP
+                      <a href="#" class="remove-task badge badge-danger">x</a>
+                  </li>
+              </ul>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+          </div>
+      </div>
+  </div>
+  <div class="col p-3">
+    <div class="card h-100">
+        <h4 class="card-header text-white bg-success">Add task</h4>
+        <div class="card-body">
+            <p class="card-text">
+                Add a new task to the list.
+            </p>
+            <form id="form-task" class="needs-validation">
+                <div class="form-row">
+                    <div class="col-8">
+                        <input type="text" id="form-task-text" class="form-control" placeholder="New Task"
+                            required>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary btn-block" type="submit">Add</button>
+                    </div>
+                </div>
+            </form>
+            <ul id="task-list" class="list-group mt-3">
+                <li class="task list-group-item d-flex justify-content-between align-items-center" >Learn HTML/CSS <a href="#" class="remove-task badge badge-danger">x</a>
+                </li>
+                <li class="task list-group-item d-flex justify-content-between align-items-center">
+                    Learn js
+                    <a href="#" class="remove-task badge badge-danger">x</a>
+                </li>
+                <li class="task list-group-item d-flex justify-content-between align-items-center">
+                  Learn OOP
+                    <a href="#" class="remove-task badge badge-danger">x</a>
+                </li>
+            </ul>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="col p-3">
+  <div class="card h-100">
+      <h4 class="card-header text-white bg-danger">Add task</h4>
+      <div class="card-body">
+          <p class="card-text">
+              Add a new task to the list.
+          </p>
+          <form id="form-task" class="needs-validation">
+              <div class="form-row">
+                  <div class="col-8">
+                      <input type="text" id="form-task-text" class="form-control" placeholder="New Task"
+                          required>
+                  </div>
+                  <div class="col">
+                      <button class="btn btn-primary btn-block" type="submit">Add</button>
+                  </div>
+              </div>
+          </form>
+          <ul id="task-list" class="list-group mt-3">
+              <li class="task list-group-item d-flex justify-content-between align-items-center" >Learn HTML/CSS <a href="#" class="remove-task badge badge-danger">x</a>
+              </li>
+              <li class="task list-group-item d-flex justify-content-between align-items-center">
+                  Learn js
+                  <a href="#" class="remove-task badge badge-danger">x</a>
+              </li>
+              <li class="task list-group-item d-flex justify-content-between align-items-center">
+                Learn OOP
+                  <a href="#" class="remove-task badge badge-danger">x</a>
+              </li>
+          </ul>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+      </div>
+  </div>
+</div>
+<div>
+</section>
+
+  <div class="container">
+    <!-- <h4>Add New Task</h4> -->
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add New Task</button>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"></h4>
+          </div>
+          <div class="modal-body btn btn-info">
+            <div class="container">
+              <div class="row mb-5">
+                  <div class="col">
+                      <h2>New Task</h2>
+                      <form id="newTaskForm">
+                          <div class="form-group">
+                              <label for="newTaskNameInput">Name</label>
+                              <input type="text" class="form-control" id="newTaskNameInput">
+                          </div>
+                          <div class="form-group">
+                              <label for="newTaskDescription">Description</label>
+                              <textarea type="text" class="form-control" id="newTaskDescription"></textarea>
+                          </div>
+                          <div class="form-row">
+                              <div class="form-group col">
+                                  <label for="newTaskAssignedTo">Assigned To</label>
+                                  <input type="text" class="form-control" id="newTaskAssignedTo">
+                              </div>
+                              <div class="form-group col">
+                                  <label for="newTaskDueDate">Due Date</label>
+                                  <input type="date" class="form-control" id="newTaskDueDate">
+                              </div>
+                          </div>
+                          <button type="submit" class="btn btn-warning btn-block">Add Task </button>
+                      </form>
+                  </div>
+              </div>
+              
+          </div>
+        </div>
+        
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+   
+          <ul class="list-group" id="tasksList">
+          </ul>
+      </div>
+      <div class="col"></div>
+  </div>
+    
+  </div>
+</section>
+  
+
+
+
+
+
+<!-- <div class="container">
+        
+    <form action="/action_page.php">
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea class="form-control" rows="5" id="comment" name="text">Any updates? Please write in this space.</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div> -->
+
+<!-- 
+      <div class="card-group">
+          <div class="card">
+              
+              <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor.</p>
+              </div>
+              <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+          </div>
+          <div class="card">
+              
+              <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Vestibulum id metus ac nisl bibendum nibh scelerisque non purus in suspendisse.</p>
+              </div>
+              <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+          </div>
+          <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Pulvinar leo id risus enim. Bibendum varius tincidunt pellentesque malesuada in.</p>
+              </div>
+              <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+          </div>
+      </div> -->
+  </div>
+</div>
+</div>          
+ <!-- <div style="border-block: 5px solid black;">        
+        <div class="row-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Backlogs</h5>
+              <p class="card-text">User stories</p>
+              <a href="#" class="btn btn-primary">Click here</a>
+            </div>
+          </div>
+        </div>
+        <div class="row-sm-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Sprint Backlogs</h5>
+                <p class="card-text">Priority ones</p>
+                <a href="#" class="btn btn-primary">Click here</a>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+    </section> -->
+   
+    <!-- <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Reports</button>
+        <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">View</a>
+            <a href="#" class="dropdown-item">Download</a>
+            <a href="#" class="dropdown-item disabled" tabindex="-1">Edit / Delete</a>
+        </div>
+    </div> -->
+    <script src="js/TaskManager.js"></script>
+    <script src="js/index.js"></script>
+   </body>
+   </html>
