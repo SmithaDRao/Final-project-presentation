@@ -1,51 +1,4 @@
-// const createTaskHtml = (id,name, description, assignedTo, dueDate, status) => {
-//     return`
-//     <div class="row">
-//     <div class= "col">
-//     <div class="card" data-task-id=${id} style="width: 18rem;">
-//   <div class="card-header">
-//   <div class="card-header ${status === 'TODO' ? 'badge-danger' : 'badge-success'}">
-//   <span class="text-white">${status}</span>
-//   </div>
-//   <ul class="list-group list-group-flush">
-//     <li class="list-group-item">Assigned To: ${assignedTo}</li>
-//     <li class="list-group-item">Due: ${dueDate}</li>
-//     <li class="list-group-item">${description}</li>
-//   </ul>
-//   <div class="d-flex w-100 justify-content-end">
-//              <button class="btn btn-outline-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
-            
-//              </div>
 
-// </div>
-//      `
-  
-//   };
-
-
-
-// Add an data-task-id attribute to each task
-// OPTIONAL 1: Add visible or invisible class to the "Mark As Done" button depending on if the status is 'TODO'
-// OPTIONAL 2: Change the styling of the status pill depending on the passed in status
-
-// const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
-//     <li class="list-group-item" data-task-id=${id}>
-//         <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
-//             <h5>${name}</h5>
-//             <span class="badge ${status === 'TODO' ? 'badge-danger' : 'badge-success'}">${status}</span>
-//         </div>
-//         <div class="d-flex w-100 mb-3 justify-content-between">
-//             <small>Assigned To: ${assignedTo}</small>
-//             <small>Due: ${dueDate}</small>
-//         </div>
-//         <p>${description}</p>
-//         <div class="d-flex w-100 justify-content-end">
-//             <button class="btn btn-outline-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">Mark As Done</button>
-            
-
-//         </div>
-//     </li>
-// ;`
 const createTaskHtml = (id, name, description, assignedTo, dueDate, status)=>`
 <div class="row">
       <div class="col sm-3">
@@ -64,11 +17,13 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status)=>`
               </div>
               <div class="d-flex justify-content-end">
                 <button class="btn btn-light text-success done-button ${status === 'TODO' ? 'visible' : 'invisible'}">done</button>
-            
+
           </div>
         </div>
       </div>
-    </div>
+    </div>            
+   
+
   
     `
 
