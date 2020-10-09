@@ -62,30 +62,43 @@ newTaskForm.addEventListener('submit', (event) => {
 
     taskManager.render();
 
-    newTaskNameInput.value = '';
-    newTaskDescription.value = '';
-    newTaskAssignedTo.value = '';
-    newTaskDueDate.value = '';
+    // newTaskNameInput.value = '';
+    // newTaskDescription.value = '';
+    // newTaskAssignedTo.value = '';
+    // newTaskDueDate.value = '';
 });
 
 // Select the Tasks List
 const tasksList = document.querySelector('#tasksList');
 
-// Add an 'onclick' event listener to the Tasks List
 tasksList.addEventListener('click', (event) => {
-    // Check if a "Mark As Done" button was clicked
     if (event.target.classList.contains('done-button')) {
+        const parentTask = event.target.parentElement.parentElement;
+
+        const taskId = Number(parentTask.dataset.taskId);
+
+        const task = taskManager.getTaskById(taskId);
+
+        task.status = 'DONE';
+
+        taskManager.save();
+
+        taskManager.render();
+    }
+
+    // Check if a "Delete" button was clicked
+    if (event.target.classList.contains('delete-button')) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement;
 
         // Get the taskId of the parent Task.
         const taskId = Number(parentTask.dataset.taskId);
 
-        // Get the task from the TaskManager using the taskId
-        const task = taskManager.getTaskById(taskId);
+        // Delete the task
+        taskManager.deleteTask(taskId);
 
-        // Update the task status to 'DONE'
-        task.status = 'DONE';
+        // Save the tasks to localStorage
+        taskManager.save();
 
         // Render the tasks
         taskManager.render();
