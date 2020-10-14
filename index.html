@@ -21,11 +21,13 @@
       <div class="container fluid">
       
     <nav class="navbar bg-dark navbar-expand-lg navbar-dark fixed-top">
-        <a class="navbar-brand" href="">Task Planner</a>
+        <a class="navbar-brand" href="" style="text-align: center;">Task Planner</a>
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <p style="margin: 1px; width: 10%; color: aliceblue; padding: 1px;text-align: center;" id="currentDate"></p>
+        
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link fas fa-home" href="#">  Home</a>
@@ -48,11 +50,13 @@
                 </li>
             </li>
         </ul>
+        
     </div>
 </nav>
 </div><br>
 <br>
 <br>
+
 
 
   <div class="container">
@@ -78,24 +82,49 @@
                       <h2>New Task</h2>
                       <form id="newTaskForm">
                           <div class="form-group">
-                              <label for="newTaskNameInput">Name</label>
-                              <input type="text" class="form-control" id="newTaskNameInput">
+                              <label for="newTaskNameInput">Task Name</label>
+                              <input type="text" class="form-control" id="newTaskNameInput" required>
+                              <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">First Name needs to be 3 characters long or more</div>
                           </div>
+                          
                           <div class="form-group">
-                              <label for="newTaskDescription">Description</label>
-                              <textarea type="text" class="form-control" id="newTaskDescription"></textarea>
-                          </div>
+                            <label class="form-label" for="newTaskDescription">Task Description</label>
+                            <textarea type="text" id="newTaskDescription" class="form-control" placeholder="minimum 15 characters long"></textarea>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Task Description needs to be 15 characters long or more</div>
+                        </div>
                           <div class="form-row">
                               <div class="form-group col">
                                   <label for="newTaskAssignedTo">Assigned To</label>
-                                  <input type="text" class="form-control" id="newTaskAssignedTo">
+                                  <!-- <input type="text" class="form-control"> -->
+                                  <select class="form-control form-assigned-input" id="newTaskAssignedTo" name="assigned-to-1" required>
+                                    <option value='' class="dropdown" disabled selected>Please select</option>
+                                    <option value='Smitha' class="dropdown">Smitha</option>
+                                    <option value='Kevin' class="dropdown">Kevin</option>
+                                
+                                </select>
+                                  <div class="invalid-feedback">
+                                    Please enter at least 3 characters
+                                  </div>
                               </div>
                               <div class="form-group col">
                                   <label for="newTaskDueDate">Due Date</label>
-                                  <input type="date" class="form-control" id="newTaskDueDate">
+                                  <input type="date" class="form-control" id="newTaskDueDate" required>
                               </div>
                           </div>
+                          <!-- <div class="form-group col-md-4">
+                            <label class="form-label" for="form-validate-task-status">Status</label>
+                            <select class="form-control" id="form-validate-task-status">
+                                <option>In Progress</option>
+                                <option>Done</option>
+                                <option>Review</option>
+                              
+                        
+                            </select>
+                          </div> -->
                           <button type="submit" class="btn btn-warning btn-block">Add Task </button>
+                          
                       </form>
                   </div>
               </div>
@@ -113,7 +142,7 @@
       <div class="col">
    
           <div class="card-deck">
-            <div class="row d-flex-wrap" id="tasksList"></div>
+            <ul><div class="row d-flex-wrap" id="tasksList"></div></ul>
       </div>
      
   </div>

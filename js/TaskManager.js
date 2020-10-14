@@ -3,7 +3,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status)=>`
   
   <div class="row">
       <div class="col sm-3">
-        <div class="card text-center ${status === 'TODO' ? 'bg-warning' : 'bg-success'}" style="width: 18rem;>
+        <div class="card text-center ${status === 'TODO' ? 'text-danger' : 'text-success'}" style="width: 18rem;>
         
           <div class="card-body" "list-group-item" data-task-id=${id}>
             <div class="d-flex justify-content-between align-items-center">
@@ -36,7 +36,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status)=>`
           this.tasks = [];
           this.currentId = currentId;
       }
-  
+   // Create a method on the class addTask and set status to TODO 
       addTask(name, description, assignedTo, dueDate) {
           const task = {
               id: this.currentId++,
@@ -46,13 +46,13 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status)=>`
               dueDate: dueDate,
               status: 'TODO'
           };
-  
+    // push new task to this.task
           this.tasks.push(task);
       }
   
       // Create the deleteTask method
       deleteTask(taskId) {
-          // Create an empty array and store it in a new variable, newTasks
+      // Create an empty array and store it in a new variable, newTasks
           const newTasks = [];
   
           // Loop over the tasks
@@ -70,19 +70,20 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status)=>`
           // Set this.tasks to newTasks
           this.tasks = newTasks;
       }
-  
-  
-      getTaskById(taskId) {
+            // Add a new method, getTaskById(), it should accept a taskId as a parameter.
+          getTaskById(taskId) {
+            // In the getTaskById() method, create a foundTask variable to store the found task.
           let foundTask;
-  
+            // Loop over the this.tasks array, for each task in the loop
           for (let i = 0; i < this.tasks.length; i++) {
+            // Store the current task in a variable called task
               const task = this.tasks[i];
-  
+            // Compare task.id to the passed in taskId, if its a match, store the task to the variable foundTask
               if (task.id === taskId) {
                   foundTask = task;
               }
           }
-  
+        //   After the loop, return the foundTask variable from the method.
           return foundTask;
       }
   
